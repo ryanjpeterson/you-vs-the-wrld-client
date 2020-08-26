@@ -14,7 +14,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/posts")
+      .get("https://us-central1-you-vs-the-wrld.cloudfunctions.net/api/posts")
       .then((res) => {
         this.setState({
           posts: res.data,
