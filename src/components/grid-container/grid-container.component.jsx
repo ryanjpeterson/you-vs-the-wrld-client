@@ -7,7 +7,9 @@ const gridContainer = ({ posts, loaded }) => {
   return (
     <div className="grid-container">
       {posts.map((post, i) => {
-        return <GridItem gridNum={i + 1} imageUrl={post.imageUrl} />;
+        return (
+          <GridItem key={post.id} gridNum={i + 1} imageUrl={post.imageUrl} />
+        );
       })}
     </div>
   );

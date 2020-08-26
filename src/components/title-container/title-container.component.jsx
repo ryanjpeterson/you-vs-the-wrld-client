@@ -5,7 +5,7 @@ import logo from "../../img/logo.png";
 const titleContainer = () => {
   return (
     <div className="title-container">
-      <img src={logo} alt="you vs the wrld" />
+      <img id="title" src={logo} alt="you vs the wrld" />
     </div>
   );
 };
