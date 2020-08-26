@@ -9,19 +9,8 @@ body {
   margin: 0;
   height: 100vh;
   max-width: 100vw;
-  box-sizing: border-box;
   color: #fff;
   position: relative;
-}
-
-#video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .App {
@@ -31,34 +20,8 @@ body {
   position: relative;
   padding: 1rem;
   box-sizing: border-box;
-}
-
-.title-container {
-  background: #bf00ff;
-  padding: 0.5rem 1rem;
-  max-width: 500px;
-
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
-  margin: 0 auto 1rem auto;
-}
-
-.title-container img {
-  width: 80%;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  grid-auto-rows: min-content;
-  grid-gap: 1rem;
-  width: 100%;
-  min-height: 100vh;
-}
-
-@media screen and (max-width: 1200px) {
-  .grid-container {
-    width: 100%;
-  }
+  align-items: center;
 }

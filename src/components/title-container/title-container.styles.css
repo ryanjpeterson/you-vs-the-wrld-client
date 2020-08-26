@@ -1,0 +1,13 @@
+.title-container {
+  background: #bf00ff;
+  padding: 0.5rem 1rem;
+  max-width: 500px;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.title-container img {
+  width: 80%;
+}

@@ -1,63 +1,43 @@
 import React from "react";
 import "./App.css";
-import logo from "./logo.png";
-import video from "./yvtw_bg.mp4";
+import axios from "axios";
 
-import GridItem from "./components/grid-item.component";
+import VideoBg from "./components/video-bg/video-bg.component";
+import TitleContainer from "./components/title-container/title-container.component";
+import GridContainer from "./components/grid-container/grid-container.component";
 
-const nums = [
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10,
-  11,
-  12,
-  13,
-  14,
-  15,
-  16,
-  17,
-  18,
-  19,
-  20,
-  21,
-  22,
-  23,
-  24,
-  25,
-  26,
-  27,
-  28,
-  29,
-  30,
-  31,
-  32,
-];
+class App extends React.Component {
+  state = {
+    posts: [],
+    loadedPosts: false,
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <video autoPlay muted loop id="video">
-        <source src={video} type="video/mp4" />
-      </video>
+  componentDidMount() {
+    axios
+      .get("http://localhost:5000/posts")
+      .then((res) => {
+        this.setState({
+          posts: res.data,
+          loadedPosts: true,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
-      <div className="title-container">
-        <img src={logo} alt="you vs the wrld" />
+  render() {
+    return (
+      <div className="App">
+        <VideoBg />
+        <TitleContainer />
+        <GridContainer
+          posts={this.state.posts}
+          loaded={this.state.loadedPosts}
+        />
       </div>
-
-      <div className="grid-container">
-        {nums.map((num) => {
-          return <GridItem num={num} />;
-        })}
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

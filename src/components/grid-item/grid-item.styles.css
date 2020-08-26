@@ -1,11 +1,15 @@
 .grid-item {
   background: rgba(255, 255, 255, 0.25);
-  min-height: 250px;
+  grid-column: span 2;
+  box-sizing: border-box;
+}
+
+.grid-item-img {
   height: 100%;
   width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
-  grid-column: span 3;
+  object-fit: cover;
+  object-position: center;
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 599px) {
