@@ -1,6 +1,6 @@
 import React from "react";
 import "./title-container.styles.css";
-import logo from "../../logo.png";
+import logo from "../../img/logo.png";
 
 const titleContainer = () => {
   return (
