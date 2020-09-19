@@ -1,0 +1,25 @@
+.post-container {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+
+.flex-divider {
+  display: flex;
+  justify-content: center;
+}
+
+.post-image {
+  max-height: 800px;
+}
+
+@media screen and (max-width: 1000px) {
+  .post-container {
+    width: 95vw;
+  }
+
+  .post-image {
+    max-width: 90vw;
+    height: auto;
+  }
+}

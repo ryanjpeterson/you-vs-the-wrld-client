@@ -1,10 +1,12 @@
 import React from "react";
 import "./grid-item.styles.css";
 
-const gridItem = ({ gridNum, imageUrl }) => {
+const gridItem = ({ gridNum, post }) => {
   return (
     <div className={`${gridNum ? `grid-${gridNum}` : ""} grid-item`}>
-      <img className="grid-item-img" src={imageUrl} alt={gridNum} />
+      <a href={`/post/${post.id}`}>
+        <img className="grid-item-img" src={post.imageUrl} alt={gridNum} />
+      </a>
     </div>
   );
 };
