@@ -1,40 +1,19 @@
 import React from "react";
 import "./App.css";
-import axios from "axios";
+import { Route, Link } from "react-router-dom";
 
 import VideoBg from "./components/video-bg/video-bg.component";
 import TitleContainer from "./components/title-container/title-container.component";
-import GridContainer from "./components/grid-container/grid-container.component";
+
+import HomePage from "./pages/home/home.component";
 
 class App extends React.Component {
-  state = {
-    posts: [],
-    loadedPosts: false,
-  };
-
-  componentDidMount() {
-    axios
-      .get("https://us-central1-you-vs-the-wrld.cloudfunctions.net/api/posts")
-      .then((res) => {
-        this.setState({
-          posts: res.data,
-          loadedPosts: true,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
   render() {
     return (
       <div className="App">
         <VideoBg />
         <TitleContainer />
-        <GridContainer
-          posts={this.state.posts}
-          loaded={this.state.loadedPosts}
-        />
+        <Route exact path="/" component={HomePage} />
       </div>
     );
   }
