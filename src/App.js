@@ -39,7 +39,7 @@ class App extends React.Component {
         />
         <Route
           exact
-          path="/post/:postId"
+          path="/posts/:postId"
           component={({ match }) => <PostPage postId={match.params.postId} />}
         />
       </div>

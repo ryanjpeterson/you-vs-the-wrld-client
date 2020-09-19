@@ -4,7 +4,7 @@ import "./grid-item.styles.css";
 const gridItem = ({ gridNum, post }) => {
   return (
     <div className={`${gridNum ? `grid-${gridNum}` : ""} grid-item`}>
-      <a href={`/post/${post.id}`}>
+      <a href={`/posts/${post.id}`}>
         <img className="grid-item-img" src={post.imageUrl} alt={gridNum} />
       </a>
     </div>
