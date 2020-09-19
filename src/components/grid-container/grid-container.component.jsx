@@ -3,14 +3,12 @@ import "./grid-container.styles.css";
 
 import GridItem from "../grid-item/grid-item.component";
 
-const gridContainer = ({ posts, loaded }) => {
+const gridContainer = ({ posts }) => {
   return (
     <div className="grid-container">
-      {posts.map((post, i) => {
-        return (
-          <GridItem key={post.id} gridNum={i + 1} imageUrl={post.imageUrl} />
-        );
-      })}
+      {posts.map((post, i) => (
+        <GridItem key={post.id} gridNum={i + 1} imageUrl={post.imageUrl} />
+      ))}
     </div>
   );
 };

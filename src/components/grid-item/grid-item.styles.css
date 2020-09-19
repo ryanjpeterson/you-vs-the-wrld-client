@@ -1,7 +1,7 @@
 .grid-item {
   background: rgba(255, 255, 255, 0.25);
-  grid-column: span 6;
-  grid-row: span 1;
+  grid-column: span 3;
+  grid-row: span 3;
   box-sizing: border-box;
   overflow: hidden;
 }

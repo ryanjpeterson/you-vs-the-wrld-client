@@ -3,7 +3,7 @@ import "./grid-item.styles.css";
 
 const gridItem = ({ gridNum, imageUrl }) => {
   return (
-    <div className={`grid-${gridNum} grid-item`}>
+    <div className={`${gridNum ? `grid-${gridNum}` : ""} grid-item`}>
       <img className="grid-item-img" src={imageUrl} alt={gridNum} />
     </div>
   );
