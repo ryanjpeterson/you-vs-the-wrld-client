@@ -4,7 +4,7 @@ import axios from "axios";
 import { Route } from "react-router-dom";
 
 import VideoBg from "./components/video-bg/video-bg.component";
-import TitleContainer from "./components/title-container/title-container.component";
+import Header from "./components/header/header.component";
 
 import HomePage from "./pages/home/home.component";
 import PostPage from "./pages/post/post.component";
@@ -31,7 +31,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <VideoBg />
-        <TitleContainer />
+        <Header />
         <Route
           exact
           path="/"
