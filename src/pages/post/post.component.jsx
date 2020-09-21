@@ -6,9 +6,12 @@ import "./post.styles.css";
 class PostPage extends React.Component {
   state = {
     post: {},
+    isLoading: false,
   };
 
   componentDidMount() {
+    this.setState({ isLoading: true });
+
     axios
       .get(
         `https://us-central1-you-vs-the-wrld.cloudfunctions.net/api/posts/${this.props.postId}`
@@ -16,6 +19,7 @@ class PostPage extends React.Component {
       .then((res) => {
         this.setState({
           post: res.data,
+          isLoading: false,
         });
       })
       .catch((err) => {
@@ -24,17 +28,17 @@ class PostPage extends React.Component {
   }
 
   render() {
-    return (
+    const { title, imageUrl, id, isLoading } = this.state.post;
+    const loadingCard = <p>Loading...</p>;
+    const content = (
       <div className="post-container">
-        <div className="flex-divider">
-          <img
-            className="post-image"
-            src={this.state.post.imageUrl}
-            alt={this.state.post.id}
-          />
-        </div>
+        <h1>{title}</h1>
+
+        <img className="post-image" src={imageUrl} alt={id} />
       </div>
     );
+
+    return isLoading ? loadingCard : content;
   }
 }
 

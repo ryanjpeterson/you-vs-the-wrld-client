@@ -1,7 +1,13 @@
 .post-container {
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  height: 80vh;
+  max-width: 60vw;
+}
+
+.post-image {
+  height: 100%;
+  width: auto;
 }
 
 .flex-divider {
@@ -9,17 +15,13 @@
   justify-content: center;
 }
 
-.post-image {
-  max-height: 800px;
-}
-
 @media screen and (max-width: 1000px) {
   .post-container {
-    width: 95vw;
+    max-width: 80vw;
   }
 
   .post-image {
-    max-width: 90vw;
     height: auto;
+    width: 100%;
   }
 }
